@@ -5,7 +5,7 @@ function Enemy() {
   var maxTick = 10; //max number for ticks to show enemy sprite
 
   var element = new Image();
-  element.src = 'images/enemies.png';
+  element.src = "images/enemies.png";
 
   this.x;
   this.y;
@@ -24,31 +24,41 @@ function Enemy() {
 
   var that = this;
 
-  this.goomba = function() {
+  this.goomba = function () {
     this.type = 20;
     that.sX = 0;
   };
 
-  this.draw = function() {
+  this.draw = function () {
     that.sX = that.width * that.frame;
-    gameUI.draw(element, that.sX, that.sY, that.width, that.height, that.x, that.y, that.width, that.height);
+    gameUI.draw(
+      element,
+      that.sX,
+      that.sY,
+      that.width,
+      that.height,
+      that.x,
+      that.y,
+      that.width,
+      that.height
+    );
   };
 
-  this.update = function() {
+  this.update = function () {
     var gravity = 0.2;
 
     if (that.grounded) {
       that.velY = 0;
     }
 
-    if (that.state == 'dead') {
+    if (that.state == "dead") {
       that.frame = 2; //squashed goomba
 
       tickCounter++;
       if (tickCounter >= 60) {
         that.frame = 4;
       }
-    } else if (that.state == 'deadFromBullet') {
+    } else if (that.state == "deadFromBullet") {
       //falling goomba
       that.frame = 3;
       that.velY += gravity;
