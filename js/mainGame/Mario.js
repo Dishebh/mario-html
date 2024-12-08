@@ -1,7 +1,7 @@
 function Mario() {
   var gameUI = GameUI.getInstance();
 
-  this.type = 'small';
+  this.type = "small";
   this.x;
   this.y;
   this.width = 32;
@@ -18,21 +18,31 @@ function Mario() {
 
   var that = this;
 
-  this.init = function() {
+  this.init = function () {
     that.x = 10;
     that.y = gameUI.getHeight() - 40 - 40;
 
     marioSprite = new Image();
-    marioSprite.src = 'images/mario-sprites.png';
+    marioSprite.src = "images/mario-sprites.png";
   };
 
-  this.draw = function() {
+  this.draw = function () {
     that.sX = that.width * that.frame;
-    gameUI.draw(marioSprite, that.sX, that.sY, that.width, that.height, that.x, that.y, that.width, that.height);
+    gameUI.draw(
+      marioSprite,
+      that.sX,
+      that.sY,
+      that.width,
+      that.height,
+      that.x,
+      that.y,
+      that.width,
+      that.height
+    );
   };
 
-  this.checkMarioType = function() {
-    if (that.type == 'big') {
+  this.checkMarioType = function () {
+    if (that.type == "big") {
       that.height = 60;
 
       //big mario sprite position
@@ -41,7 +51,7 @@ function Mario() {
       } else {
         that.sY = 90;
       }
-    } else if (that.type == 'small') {
+    } else if (that.type == "small") {
       that.height = 44;
 
       //small mario sprite
@@ -50,7 +60,7 @@ function Mario() {
       } else {
         that.sY = 4;
       }
-    } else if (that.type == 'fire') {
+    } else if (that.type == "fire") {
       that.height = 60;
 
       //fire mario sprite
@@ -58,7 +68,7 @@ function Mario() {
     }
   };
 
-  this.resetPos = function() {
+  this.resetPos = function () {
     that.x = canvas.width / 10;
     that.y = canvas.height - 40;
     that.frame = 0;

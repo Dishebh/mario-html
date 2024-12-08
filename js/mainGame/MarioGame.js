@@ -696,18 +696,29 @@ function MarioGame() {
       }
     }
 
-    // Check if Mario is at the top of his jump
+    // let platformElement = null;
+    // // Check if Mario is at the top of his jump
     // if (mario.jumping && mario.velY > -0.1 && mario.velY < 0.1) {
     //   // Render element of type 0 at the top of Mario's jump
-    //   renderElementAtTopOfJump();
+    //   platformElement = createPlatformElement();
     // }
 
-    // function renderElementAtTopOfJump() {
-    //   // Assuming you have a function to render elements
-    //   var element = new Element(0); // Create an element of type 0
+    // function createPlatformElement() {
+    //   // Assuming you have a function to create elements
     //   element.x = mario.x; // Position it at Mario's x position
-    //   element.y = mario.y - 50; // Position it slightly above Mario
-    //   element.render(); // Render the element
+    //   element.y = mario.y + 50; // Position it slightly below Mario
+    //   return element;
+    // }
+
+    // // Render the platform element if it exists
+    // if (platformElement) {
+    //   platformElement.draw();
+    //   // mario.velX = 0;
+    //   mario.velY = 0;
+    //   // mario.x = platformElement.x;
+    //   // mario.y = platformElement.y;
+    //   mario.jumping = false;
+    //   mario.grounded = true;
     // }
 
     if (keys[39]) {
