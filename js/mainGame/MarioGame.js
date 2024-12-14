@@ -685,11 +685,11 @@ function MarioGame() {
         mario.velY = -(mario.speed / 2 + 5.5);
 
         // mario sprite position
-        if (mario.frame == 0 || mario.frame == 1) {
-          mario.frame = 3; //right jump
-        } else if (mario.frame == 8 || mario.frame == 9) {
-          mario.frame = 2; //left jump
-        }
+        // if (mario.frame == 0 || mario.frame == 1) {
+        //   mario.frame = 3; //right jump
+        // } else if (mario.frame == 8 || mario.frame == 9) {
+        //   mario.frame = 2; //left jump
+        // }
 
         //sound when mario jumps
         gameSound.play("jump");
@@ -758,10 +758,10 @@ function MarioGame() {
         if (tickCounter > maxTick / mario.speed) {
           tickCounter = 0;
 
-          if (mario.frame != 9) {
-            mario.frame = 9;
+          if (mario.frame != 1) {
+            mario.frame = 1;
           } else {
-            mario.frame = 8;
+            mario.frame = 0;
           }
         }
       }
@@ -837,23 +837,23 @@ function MarioGame() {
     if (collisionDirection == "r") {
       mario.x += 10;
       mario.velY = 2;
-      mario.frame = 11;
+      mario.frame = 1;
     } else if (collisionDirection == "l") {
       mario.x -= 32;
       mario.velY = 2;
-      mario.frame = 10;
+      mario.frame = 1;
     }
 
     if (marioInGround) {
       mario.x += 20;
-      mario.frame = 10;
+      mario.frame = 1;
       tickCounter += 1;
       if (tickCounter > maxTick) {
         that.pauseGame();
 
         mario.x += 10;
         tickCounter = 0;
-        mario.frame = 12;
+        mario.frame = 1;
 
         //sound when stage clears
         gameSound.play("stageClear");

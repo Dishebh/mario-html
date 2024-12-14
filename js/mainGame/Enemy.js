@@ -5,7 +5,7 @@ function Enemy() {
   var maxTick = 10; //max number for ticks to show enemy sprite
 
   var element = new Image();
-  element.src = "images/enemies.png";
+  element.src = "images/mario-sprites.png";
 
   this.x;
   this.y;
@@ -18,7 +18,7 @@ function Enemy() {
   this.sX;
   this.sY = 0;
   this.width = 32;
-  this.height = 32;
+  this.height = 40;
 
   this.frame = 0;
 
@@ -34,7 +34,7 @@ function Enemy() {
     gameUI.draw(
       element,
       that.sX,
-      that.sY,
+      12,
       that.width,
       that.height,
       that.x,
@@ -75,7 +75,7 @@ function Enemy() {
       if (tickCounter > maxTick) {
         tickCounter = 0;
         if (that.frame == 0) {
-          that.frame = 1;
+          that.frame = 9;
         } else {
           that.frame = 0;
         }
